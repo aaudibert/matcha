@@ -1,0 +1,23 @@
+img {
+	width: 100%;
+	height: 95%;
+	position: fixed;
+	top: 5%;
+	left: 0;
+	z-index: -1;
+}
+
+.tag-box {
+	padding: 15%;
+}
+
+.tagline {
+	margin-top: 10%;
+	font-family: 'Questrial', sans-serif;
+	font-size: x-large;
+}
+
+a, a.visted{
+	text-decoration: none;
+	color: #000;
+}

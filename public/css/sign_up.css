@@ -1,0 +1,17 @@
+.sign-up {
+	margin-top: 6%;
+}
+
+.sign-up input, .sign-up select, .sign-up datalist, p {
+	font-size: 16px;
+	text-align: center;
+	outline: none !important;
+	font-family: 'Questrial', sans-serif;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+.sign-up input:focus, .sign-up select:focus, .sign-up datalist:focus {
+	text-align: left;
+	border-bottom: solid 1px #1d2228;
+}

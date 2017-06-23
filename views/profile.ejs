@@ -1,0 +1,36 @@
+<%include header.ejs%>
+
+	<% if (error === null) {%>
+		<% if (profile.username === sess.usr.username) {%>
+
+			<%# User profile %>
+
+			<div >
+				<h3 id='username'>Username: <%= profile.username %></h3>
+				<button onclick= modifyField('username')>Modify</button>
+				<h4 id='fname'>First name: <%= profile.first_name %></h3>
+				<button onclick= modifyField('fname')>Modify</button>
+				<h4 id='lname'>Last name: <%= profile.last_name %></h3>
+				<button onclick= modifyField('lname')>Modify</button>
+			</div>
+		<% } else { %>
+
+			<%# Other user profile %>
+
+			<h4>Username: <%= profile.username %></h3>
+			<h4>First name: <%= profile.first_name %></h3>
+			<h4>Last name: <%= profile.last_name %></h3>
+			<script type="text/javascript">
+				  var userId = <%= profile.id %>;
+			</script>
+			<div id='like' ></div>
+			<button name='report'>block user</button>
+			<button name='block'>report user</button>
+			<script type="text/babel" src='/js/like.js'></script>
+		<%}%>
+
+	<% } else { %>
+		<h2><%= error %></h2>
+	<%}%>
+
+<%include footer.ejs%>

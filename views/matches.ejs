@@ -1,0 +1,25 @@
+<%include header.ejs%>
+	<% if (error === null) {%>
+
+		<% for (var i = 0; i < profile.length; i++)  {%>
+			<a href= /profile/<%=profile[i].username %> >
+				<div class='profile-div'>
+					<img class='profile-pic' src="/img/profile/default.png">
+					<div class='infos'>
+						<h3><%= profile[i].username %></h3>
+						<br>
+						<br>
+						<h4><%= profile[i].first_name %></h4>
+						<h4><%= profile[i].last_name %></h4>
+						<br>
+						<h4><%= profile[i].gender %></h4>
+					</div>
+				</div>
+			</a>
+		<%}%>
+
+	<% } else { %>
+		<h2><%= error %></h2>
+	<%}%>
+
+<%include footer.ejs%>

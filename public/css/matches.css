@@ -1,0 +1,39 @@
+.profile-div {
+	height: 100px;
+	background-color: rgb(129, 136, 255);
+	width: 75%;
+	margin: auto;
+	margin-top: 50px;
+	padding: 25px;
+	text-align: left;
+	border-radius: 4px;
+	text-decoration: none;
+	display: flex;
+}
+
+
+.infos {
+	padding: 5px;
+	text-decoration: none;
+	margin-left: 25px;
+	width: 75%;
+}
+
+.profile-pic {
+	display: inline-block;
+	border-radius: 2px;
+	height: 100px;
+	width: 100px;
+}
+
+a h3, a h4 {
+	margin: 0;
+	display: inline-block;
+	color: #1d2228;
+	font-family: 'Questrial', sans-serif;
+	text-decoration: none;
+}
+
+a:visited h3, a:visited h4{
+	text-decoration: none;
+}

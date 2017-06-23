@@ -1,0 +1,7 @@
+<%include header.ejs%>
+
+<% for (var i = 0; i < notifs.length; i++)  {%>
+	<a href=/profile/<%=notifs[i].senderUname%>><%=notifs[i].senderUname%></a> <%= notifs[i].type %>
+<%}%>
+
+<%include footer.ejs%>

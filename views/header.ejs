@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= pageTitle %></title>
+	 	<meta charset="utf-8" />
+ 		<script src="/js/script.js"></script>
+		<script src="https://unpkg.com/react@15/dist/react.js"></script>
+		<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+		<link rel="stylesheet" href= <%= localFont %> />
+		<link rel="stylesheet" href= <%= localCss %> />
+		<link rel="stylesheet" href="/css/header.css">
+	</head>
+	<body>
+		<ul class="header">
+			<li class="eheader" id="header" >Matcha</li>
+			<li class="eheader r" style='float: right'>
+				<% if (!sess.usr) {%>
+
+					<%# unlogged user %>
+
+				<form method="POST" action="sign_in">
+					<input type="text" name='uname' placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'">
+					<input type="password" name='password' placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'">
+					<input type="submit" class="eheader btn" name="btn-signin" value="Sign in">
+				</form>
+				<% } else { %>
+
+					<%# logged user %>
+
+					<input type="text" name="searchbar" placeholder="Looking for someone?" id='searchbar'>
+					<a href="/notifications">Notifications</a>
+					<a href="/matches">Matches</a>
+					<a href= /profile/<%=sess.usr.username%> ><%=sess.usr.username%></a>
+					<button type="button" class="eheader btn" onclick="window.location.href = `/logout`" >Logout</button>
+				<% } %>
+			</li>
+		</ul>
+	<div class="content">

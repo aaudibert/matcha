@@ -1,0 +1,49 @@
+<%include header.ejs%>
+		<form method="POST" action="sign_up" class="sign-up">
+			<div><input type="text" name="fname" placeholder="First Name" onfocus="this.placeholder=''" onblur="this.placeholder='First Name'" required><br></div>
+			<div><input type="text" name="lname" placeholder="Last Name" onfocus="this.placeholder=''" onblur="this.placeholder='Last Name'" required><br></div>
+			<div><input type="text" name="uname" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'" required><br></div>
+			<div><input type="email" name="mail" placeholder="e-mail adress" onfocus="this.placeholder=''" onblur="this.placeholder='e-mail adress'" required><br></div>
+			<div><input type="password" name="password" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'" required><br></div>
+			<div><input type="password" name="rpassword" placeholder="Confirm password" onfocus="this.placeholder=''" onblur="this.placeholder='Confirm password'" required><br></div>
+			<div><input type="text" name="gender" list="genders" placeholder="Please enter your gender" onfocus="this.placeholder=''" onblur="this.placeholder='Please enter your gender'" required/>
+			<datalist id="genders">
+			<% for (var i = 0; i < gender.length; i++)  {%>
+				<option><%= gender[i].gender %></option>
+			<%}%>
+			</datalist></div>
+			<select name="interest" multiple>
+				<option value="" selected>What gender(s) are you interested in?</option>
+				<% for (var i = 0; i < gender.length; i++)  {%>
+					<option><%= gender[i].gender %></option>
+				<%}%>
+			</select> 
+			<p>What is your date of birth?</p>
+			<select name="dob">
+				<% for (var i = 1; i <= 31; i++)  {%>
+					<option><%= i %></option>
+				<%}%>
+			</select>
+			<select name="mob">
+					<option>January</option>
+					<option>February</option>
+					<option>March</option>
+					<option>April</option>
+					<option>May</option>
+					<option>June</option>
+					<option>July</option>
+					<option>August</option>
+					<option>September</option>
+					<option>October</option>
+					<option>November</option>
+					<option>December</option>
+			</select>
+			<select name="yob">
+				<% for (var i = 1999; i >= 1900; i--)  {%>
+					<option><%= i %></option>
+				<%}%>
+			</select>
+			<br>
+			<input type="submit" class="button" name="btn-signup" value="Sign up" >
+		</form>
+<%include footer.ejs%>
